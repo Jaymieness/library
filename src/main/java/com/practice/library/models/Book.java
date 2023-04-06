@@ -2,9 +2,17 @@ package com.practice.library.models;
 
 import jakarta.persistence.*;
 
+import java.util.UUID;
+
+
 @Entity
 @Table(name = "books")
 public class Book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private String id;
 
     @Column(name = "bookName")
     private String bookName;
@@ -15,7 +23,6 @@ public class Book {
     @Column(name = "bookGenre")
     private String bookGenre;
 
-    @Id
     @Column(name = "ISBN")
     private String ISBN;
 
@@ -35,7 +42,15 @@ public class Book {
     }
 
     public Book() {
+        this.id = UUID.randomUUID().toString();
+    }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getBookName() {
