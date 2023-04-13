@@ -4,8 +4,10 @@ import com.practice.library.models.*;
 
 import com.practice.library.repository.BookRepository;
 import com.practice.library.services.BookService;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -16,6 +18,7 @@ import java.util.List;
 
 
 @SpringBootTest
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BooksUnitTest {
 
     @Autowired
@@ -25,7 +28,7 @@ public class BooksUnitTest {
     private List<Book> booksAvailable;
 
 
-    @BeforeEach
+    @BeforeAll
     void setUp() {
         bookRepository.save(new Book("The Silver Chair: Chronicles of Narnia", "C.S. Lewis", "Fantasy", "978-0006716815", 2, 1));
         bookRepository.save(new Book("Night Watch", "Terry Pratchett", "Fantasy", "978-0552148993", 5, 2));

@@ -1,0 +1,48 @@
+{
+    "bookName": "Night Watch",
+    "bookAuthor": "Terry Pratchett",
+    "bookGenre": "Fantasy",
+    "isbn": "978-0552148993",
+    "copiesAvailable": "5",
+    "loanLength": "2"
+}
+{
+    "bookName": "The Silver Chair: Chronicles of Narnia",
+    "bookAuthor": "C.S. Lewis",
+    "bookGenre": "Fantasy",
+    "isbn": "978-0006716815",
+    "copiesAvailable": "2",
+    "loanLength": "1"
+}
+{
+        "bookName": "The Life And Times Of The Thunderbolt Kid: Travels Through my Childhood",
+        "bookAuthor": "Bill Bryson",
+        "bookGenre": "Biography",
+        "copiesAvailable": 3,
+        "loanLength": 1,
+        "isbn": "978-0552772549"
+    }
+    {
+        "bookName": "The Fourth Pillar of Sustainability: Culture's Essential Role in Public Planning",
+        "bookAuthor": "Jon Hawkes",
+        "bookGenre": "Non-Fiction",
+        "copiesAvailable": 1,
+        "loanLength": 2,
+        "isbn": "978-1863350501"
+    }
+    {
+        "bookName": "Sabriel: Abhorsen Series",
+        "bookAuthor": "Garth Nix",
+        "bookGenre": "Fantasy",
+        "copiesAvailable": 2,
+        "loanLength": 1,
+        "isbn": "978-0007137312"
+    }
+    {
+        "bookName": "Interesting Times",
+        "bookAuthor": "Terry Pratchett",
+        "bookGenre": "Fantasy",
+        "copiesAvailable": 2,
+        "loanLength": 1,
+        "isbn": "978-0552142359"
+    }

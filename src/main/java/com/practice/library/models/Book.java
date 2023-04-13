@@ -1,9 +1,7 @@
 package com.practice.library.models;
 
 import jakarta.persistence.*;
-
 import java.util.UUID;
-
 
 @Entity
 @Table(name = "books")
@@ -12,7 +10,7 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private String id;
+    private Long id;
 
     @Column(name = "bookName")
     private String bookName;
@@ -42,14 +40,14 @@ public class Book {
     }
 
     public Book() {
-        this.id = UUID.randomUUID().toString();
+
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -99,5 +97,17 @@ public class Book {
 
     public void setLoanLength(int loanLength) {
         this.loanLength = loanLength;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookName='" + bookName + '\'' +
+                ", bookAuthor='" + bookAuthor + '\'' +
+                ", bookGenre='" + bookGenre + '\'' +
+                ", ISBN='" + ISBN + '\'' +
+                ", copiesAvailable=" + copiesAvailable +
+                ", loanLength=" + loanLength +
+                '}';
     }
 }
