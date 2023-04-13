@@ -1,16 +1,24 @@
 package com.practice.library.models;
 
 import jakarta.persistence.*;
+import lombok.*;
+
 import java.util.UUID;
 
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "books")
 public class Book {
 
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id")
-    private Long id;
+    private UUID id;
 
     @Column(name = "bookName")
     private String bookName;
@@ -37,77 +45,5 @@ public class Book {
         this.ISBN = ISBN;
         this.copiesAvailable = copiesAvailable;
         this.loanLength = loanLength;
-    }
-
-    public Book() {
-
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getBookName() {
-        return bookName;
-    }
-
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
-    }
-
-    public String getBookAuthor() {
-        return bookAuthor;
-    }
-
-    public void setBookAuthor(String bookAuthor) {
-        this.bookAuthor = bookAuthor;
-    }
-
-    public String getBookGenre() {
-        return bookGenre;
-    }
-
-    public void setBookGenre(String bookGenre) {
-        this.bookGenre = bookGenre;
-    }
-
-    public String getISBN() {
-        return ISBN;
-    }
-
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
-    }
-
-    public int getCopiesAvailable() {
-        return copiesAvailable;
-    }
-
-    public void setCopiesAvailable(int copiesAvailable) {
-        this.copiesAvailable = copiesAvailable;
-    }
-
-    public int getLoanLength() {
-        return loanLength;
-    }
-
-    public void setLoanLength(int loanLength) {
-        this.loanLength = loanLength;
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "bookName='" + bookName + '\'' +
-                ", bookAuthor='" + bookAuthor + '\'' +
-                ", bookGenre='" + bookGenre + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", copiesAvailable=" + copiesAvailable +
-                ", loanLength=" + loanLength +
-                '}';
     }
 }

@@ -2,6 +2,7 @@ package com.practice.library.services;
 
 import com.practice.library.models.Book;
 import com.practice.library.repository.BookRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Service
+@RequiredArgsConstructor
 public class BookServiceImpl implements BookService {
 
     private final Logger LOGGER = Logger.getLogger(BookService.class.getName());
