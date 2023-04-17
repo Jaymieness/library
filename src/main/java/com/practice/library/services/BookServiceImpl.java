@@ -1,6 +1,6 @@
 package com.practice.library.services;
 
-import com.practice.library.models.Book;
+import com.practice.library.entity.Book;
 import com.practice.library.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,7 +24,7 @@ public class BookServiceImpl implements BookService {
 
 
     @Override
-    public Optional<Book> getBook(Long id) {
+    public Optional<Book> getBook(UUID id) {
        return bookRepository.findById(id);
     }
 
@@ -33,7 +34,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book updateBook(Book book, Long id) {
+    public Book updateBook(Book book, UUID id) {
         Book bookToUpdate = bookRepository.findById(id).get();
 
         if (Objects.nonNull(book.getBookName()) && !"".equalsIgnoreCase(book.getBookName())) {
@@ -58,7 +59,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void deleteBook(Long id) {
+    public void deleteBook(UUID id) {
         LOGGER.log(Level.INFO, "Deleting book: " + bookRepository.findById(id).toString());
         bookRepository.deleteById(id);
     }

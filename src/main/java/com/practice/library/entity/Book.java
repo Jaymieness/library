@@ -1,4 +1,4 @@
-package com.practice.library.models;
+package com.practice.library.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

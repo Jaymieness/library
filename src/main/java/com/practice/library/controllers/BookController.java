@@ -1,17 +1,17 @@
 package com.practice.library.controllers;
 
-import com.practice.library.models.Book;
+import com.practice.library.entity.Book;
 import com.practice.library.services.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 
 @RestController
@@ -28,7 +28,7 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Book>> getBook(@PathVariable Long id) {
+    public ResponseEntity<Optional<Book>> getBook(@PathVariable UUID id) {
         return new ResponseEntity<>(bookService.getBook(id), HttpStatus.OK);
     }
 
@@ -38,12 +38,12 @@ public class BookController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Book> updateBook(@RequestBody Book book, @PathVariable Long id) {
+    public ResponseEntity<Book> updateBook(@RequestBody Book book, @PathVariable UUID id) {
         return new ResponseEntity<>(bookService.updateBook(book, id), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<HttpStatus> deleteBook(@PathVariable Long id) {
+    public ResponseEntity<HttpStatus> deleteBook(@PathVariable UUID id) {
         bookService.deleteBook(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

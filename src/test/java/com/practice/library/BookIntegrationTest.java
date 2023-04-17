@@ -39,5 +39,4 @@ public class BookIntegrationTest {
                 .andExpect(jsonPath("$", hasSize(6)))
                         .andDo(print());
     }
-
 }

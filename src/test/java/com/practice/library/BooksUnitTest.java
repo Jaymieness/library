@@ -1,6 +1,6 @@
 package com.practice.library;
 
-import com.practice.library.models.*;
+import com.practice.library.entity.*;
 
 import com.practice.library.repository.BookRepository;
 import com.practice.library.services.BookService;
